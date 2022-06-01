@@ -1,0 +1,49 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.0.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.glatisko'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	implementation('org.springframework.boot:spring-boot-starter:2.0.0.RELEASE')
+	implementation('org.springframework.boot:spring-boot-starter-web:2.0.0.RELEASE')
+	implementation('org.springframework.boot:spring-boot-starter-activemq:2.0.0.RELEASE')
+	implementation('org.springframework.boot:spring-boot-starter-tomcat:2.0.0.RELEASE')
+
+
+    implementation('com.thoughtworks.xstream:xstream:1.4.10')
+    implementation('org.springframework:spring-oxm:5.0.4.RELEASE')
+	//implementation('javax.jms:javax.jms-api:2.0.1')
+
+
+	implementation('javax.servlet:jstl:1.2')
+	implementation('org.apache.tomcat.embed:tomcat-embed-jasper:9.0.6')
+	//implementation('org.eclipse.jdt.core.implementationr:ecj:4.6.1')	
+	implementation ('org.eclipse.jdt.core.compiler:ecj:4.6.1')
+	
+	implementation('org.webjars:bootstrap:4.0.0')
+	implementation('org.webjars:jquery:3.3.1')
+
+	implementation('org.apache.activemq:activemq-broker')
+	implementation('com.fasterxml.jackson.core:jackson-databind')
+	testImplementation('org.springframework.boot:spring-boot-starter-test:2.0.0.RELEASE')
+}
